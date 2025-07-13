@@ -1,27 +1,24 @@
-
-### 2. Файл index.html (весь код сайта)
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Net Present Value Community</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width='100%' height='100%' fill='white'/><text x='50%' y='70%' font-size='70' text-anchor='middle' fill='black'>NPV</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width='100%' height='100%' fill='%231a202c'/><text x='50%' y='70%' font-size='70' text-anchor='middle' fill='%23ffffff'>NPV</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --ton-blue: #0088cc;
             --eth-purple: #8a2be2;
             --poly-green: #8247e5;
-            --bg-light: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-dark: #1a202c;
-            --text-secondary: #4a5568;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f1f5f9;
+            --text-secondary: #94a3b8;
             --accent: #4f46e5;
-            --border: #e2e8f0;
+            --border: #334155;
             --gradient: linear-gradient(135deg, var(--ton-blue), var(--eth-purple), var(--poly-green));
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         
         * {
@@ -32,12 +29,12 @@
         }
         
         body {
-            background: var(--bg-light);
-            color: var(--text-dark);
+            background: var(--bg-dark);
+            color: var(--text-light);
             min-height: 100vh;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 136, 204, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.05) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(0, 136, 204, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 20%);
             line-height: 1.6;
         }
         
@@ -52,7 +49,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
@@ -72,6 +69,7 @@
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
             padding: 5px 0;
+            text-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
         }
         
         .language-switcher {
@@ -80,9 +78,9 @@
         }
         
         .lang-btn {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid var(--border);
-            color: var(--text-dark);
+            color: var(--text-light);
             padding: 10px 20px;
             border-radius: 50px;
             cursor: pointer;
@@ -90,14 +88,12 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
             font-weight: 500;
         }
         
         .lang-btn:hover {
-            background: rgba(79, 70, 229, 0.05);
+            background: rgba(79, 70, 229, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
         .lang-options {
@@ -107,7 +103,7 @@
             background: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             display: none;
             z-index: 100;
             width: 100%;
@@ -124,7 +120,7 @@
         }
         
         .lang-option:hover {
-            background: rgba(79, 70, 229, 0.05);
+            background: rgba(79, 70, 229, 0.2);
         }
         
         .tabs {
@@ -132,10 +128,10 @@
             gap: 10px;
             margin-bottom: 30px;
             flex-wrap: wrap;
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50px;
             padding: 5px;
-            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
         
         .tab-btn {
@@ -169,14 +165,14 @@
         }
         
         .tab-btn:hover {
-            color: var(--text-dark);
+            color: var(--text-light);
             transform: translateY(-3px);
         }
         
         .tab-btn.active {
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--accent);
-            box-shadow: 0 0 15px rgba(79, 70, 229, 0.15);
+            background: rgba(79, 70, 229, 0.3);
+            color: white;
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
         }
         
         .tab-btn i {
@@ -229,9 +225,9 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            color: var(--text-dark);
+            color: var(--text-light);
             padding-bottom: 15px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
         }
         
         .card h2 i {
@@ -243,11 +239,21 @@
         
         .about-content {
             line-height: 1.8;
-            color: var(--text-dark);
+            color: var(--text-light);
         }
         
         .about-content p {
             margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .values-grid {
@@ -258,7 +264,7 @@
         }
         
         .value-item {
-            background: rgba(79, 70, 229, 0.03);
+            background: rgba(79, 70, 229, 0.1);
             border-radius: 15px;
             padding: 20px;
             display: flex;
@@ -270,7 +276,7 @@
         
         .value-item:hover {
             transform: translateY(-5px);
-            background: rgba(79, 70, 229, 0.05);
+            background: rgba(79, 70, 229, 0.2);
             box-shadow: var(--shadow);
         }
         
@@ -288,7 +294,7 @@
         }
         
         .token-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 25px;
             position: relative;
@@ -299,22 +305,31 @@
         
         .token-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chain-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
         }
         
         .chain-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
             padding: 5px 12px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: bold;
+            background: rgba(0, 136, 204, 0.2);
+            color: var(--ton-blue);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
-        .ton-badge { background: rgba(0, 136, 204, 0.1); color: var(--ton-blue); }
-        .poly-badge { background: rgba(130, 71, 229, 0.1); color: var(--poly-green); }
-        .eth-badge { background: rgba(138, 43, 226, 0.1); color: var(--eth-purple); }
+        .ton-badge { background: rgba(0, 136, 204, 0.2); color: var(--ton-blue); }
+        .poly-badge { background: rgba(130, 71, 229, 0.2); color: var(--poly-green); }
+        .eth-badge { background: rgba(138, 43, 226, 0.2); color: var(--eth-purple); }
         
         .token-card h3 {
             margin-bottom: 15px;
@@ -322,28 +337,30 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: var(--text-dark);
+            color: var(--text-light);
         }
         
         .address-box {
-            background: rgba(0, 0, 0, 0.02);
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 12px;
             padding: 15px;
             margin: 15px 0;
             font-family: monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             word-break: break-all;
             position: relative;
             border: 1px solid var(--border);
+            padding-right: 45px;
+            line-height: 1.5;
         }
         
         .copy-btn {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(79, 70, 229, 0.05);
+            background: rgba(79, 70, 229, 0.2);
             border: 1px solid var(--border);
-            color: var(--text-secondary);
+            color: var(--text-light);
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
@@ -351,8 +368,7 @@
         }
         
         .copy-btn:hover {
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--accent);
+            background: rgba(79, 70, 229, 0.4);
         }
         
         .links {
@@ -367,18 +383,18 @@
             align-items: center;
             gap: 12px;
             padding: 12px 20px;
-            background: rgba(79, 70, 229, 0.03);
+            background: rgba(79, 70, 229, 0.1);
             border-radius: 12px;
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-light);
             transition: all 0.3s ease;
             border: 1px solid var(--border);
         }
         
         .link-btn:hover {
-            background: rgba(79, 70, 229, 0.08);
+            background: rgba(79, 70, 229, 0.3);
             transform: translateX(7px);
-            border-color: rgba(79, 70, 229, 0.3);
+            border-color: rgba(79, 70, 229, 0.5);
         }
         
         .link-btn i {
@@ -404,11 +420,14 @@
             align-items: center;
             gap: 15px;
             border: 1px solid var(--border);
+            cursor: pointer;
+            text-decoration: none;
         }
         
         .social-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            background: rgba(79, 70, 229, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
         .social-icon {
@@ -421,18 +440,18 @@
             font-size: 1.8rem;
             background: var(--gradient);
             color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .social-card a {
-            color: var(--text-dark);
+        .social-card span {
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
             line-height: 1.4;
         }
         
-        .social-card a:hover {
+        .social-card:hover span {
             color: var(--accent);
         }
         
@@ -460,12 +479,12 @@
         }
         
         .warning {
-            background: rgba(255, 0, 0, 0.03);
+            background: rgba(255, 0, 0, 0.1);
             border-left: 4px solid #ff5555;
             padding: 25px;
             border-radius: 12px;
             margin-top: 30px;
-            color: var(--text-dark);
+            color: var(--text-light);
         }
         
         .btn {
@@ -482,18 +501,28 @@
             transition: all 0.3s ease;
             text-decoration: none;
             margin-top: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .token-info {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         footer {
             text-align: center;
             padding: 40px 0 20px;
-            border-top: 1px solid var(--border);
+            border-top: 2px solid var(--border);
             margin-top: 50px;
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -521,11 +550,6 @@
             .token-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        /* Light theme adjustments */
-        .address-box, .link-btn, .value-item, .token-card {
-            background-color: white;
         }
     </style>
 </head>
@@ -571,30 +595,49 @@
                 <div class="about-content">
                     <p><span class="lang-text" data-key="about_text1">Net Present Value (NPV) объединяет инвесторов и трейдеров, работающих с разными активами. Название проекта отражает его суть:</span></p>
                     
+                    <div class="section-title">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="lang-text" data-key="financial_concept">Финансовый концепт</span>
+                    </div>
                     <p>💡 <strong>Net Present Value</strong> <span class="lang-text" data-key="about_text2">(Чистая приведённая стоимость)</span> — <span class="lang-text" data-key="about_text3">ключевой финансовый показатель, демонстрирующий реальную ценность инвестиций.</span></p>
                     
-                    <p>✨ <span class="lang-text" data-key="about_text4">Альтернативная трактовка:</span> 
-                        <br><strong>NET</strong> <span class="lang-text" data-key="about_text5">(Сеть)</span> + 
+                    <div class="section-title">
+                        <i class="fas fa-gem"></i>
+                        <span class="lang-text" data-key="alternative">Альтернативная трактовка</span>
+                    </div>
+                    <p>✨ 
+                        <strong>NET</strong> <span class="lang-text" data-key="about_text5">(Сеть)</span> + 
                         <strong>PRESENT</strong> <span class="lang-text" data-key="about_text6">(Подарок)</span> + 
                         <strong>VALUE</strong> <span class="lang-text" data-key="about_text7">(Ценность)</span></p>
                     
-                    <p><span class="lang-text" data-key="about_text8">Наша цель — создание инвестиционного синдиката, который предоставляет:</span></p>
+                    <div class="section-title">
+                        <i class="fas fa-bullseye"></i>
+                        <span class="lang-text" data-key="our_goals">Наши цели</span>
+                    </div>
+                    <p><span class="lang-text" data-key="about_text8">Создание инвестиционного синдиката, который предоставляет:</span></p>
                     <ul>
                         <li><span class="lang-text" data-key="about_text9">Качественную аналитику рынков</span></li>
                         <li><span class="lang-text" data-key="about_text10">Образовательные материалы</span></li>
                         <li><span class="lang-text" data-key="about_text11">Инновационные финансовые продукты</span></li>
                     </ul>
                     
-                    <p><span class="lang-text" data-key="about_text12">Основатель сообщества (Founder KPUR) — опытный инвестор из России, развивающий сообщество с 2024 года.</span></p>
+                    <div class="section-title">
+                        <i class="fas fa-user-secret"></i>
+                        <span class="lang-text" data-key="founder">Основатель</span>
+                    </div>
+                    <p><span class="lang-text" data-key="about_text12">Сообщество основано опытным инвестором <strong>KPUR</strong> из России, который развивает проект с 2024 года.</span></p>
                     
-                    <h3><span class="lang-text" data-key="values_title">Наши ценности:</span></h3>
+                    <div class="section-title">
+                        <i class="fas fa-star"></i>
+                        <span class="lang-text" data-key="values_title">Наши ценности</span>
+                    </div>
                     <div class="values-grid">
                         <div class="value-item">
                             <i class="fas fa-chart-line"></i>
                             <div><span class="lang-text" data-key="value1">Последовательный рост капитала при минимальных рисках</span></div>
                         </div>
                         <div class="value-item">
-                            <i class="fas fa-lightbulb"></i>
+                            <i class="fas fa-search"></i>
                             <div><span class="lang-text" data-key="value2">Изучение рынков, экономики и поведенческих моделей</span></div>
                         </div>
                         <div class="value-item">
@@ -625,12 +668,22 @@
         <div id="tokens" class="tab-content">
             <div class="card">
                 <h2><i class="fas fa-coins"></i> <span class="lang-text" data-key="tokens_title">Токены Net Present Value</span></h2>
+                
+                <div class="token-info">
+                    <p><span class="lang-text" data-key="token_info">Эти токены вознаграждают за активное участие в сообществе, изучающем инвестиции и блокчейн. Ограниченный выпуск. Функции развиваются в зависимости от потребностей участников. Токен технически доступен для торговли, но не имеет фиксированной стоимости и не предоставляет никаких гарантий. Работа с токеном сопряжена с рисками.</span></p>
+                </div>
+                
                 <div class="token-grid">
                     <!-- TON Token -->
                     <div class="token-card">
-                        <span class="chain-badge ton-badge">TON Blockchain</span>
-                        <h3><i class="fab fa-telegram"></i> <span class="lang-text" data-key="ton_token">NPV на TON</span></h3>
+                        <div class="chain-info">
+                            <div class="chain-badge ton-badge">
+                                <i class="fab fa-telegram"></i> TON Blockchain
+                            </div>
+                        </div>
+                        <h3>NET PRESENT VALUE (NPV)</h3>
                         <p><strong><span class="lang-text" data-key="symbol">Символ:</span></strong> NPV</p>
+                        <p><strong><span class="lang-text" data-key="total_supply">Общее предложение:</span></strong> 24,862,048</p>
                         
                         <div class="address-box">
                             EQBzKIYP_WVnYS5kDbz-3zat98htNCXQUVfmkaH7fLdcEaT3
@@ -654,8 +707,13 @@
                     
                     <!-- Polygon Token -->
                     <div class="token-card">
-                        <span class="chain-badge poly-badge">Polygon Blockchain</span>
-                        <h3><i class="fas fa-polygon"></i> <span class="lang-text" data-key="poly_token">NPV на Polygon</span></h3>
+                        <div class="chain-info">
+                            <div class="chain-badge poly-badge">
+                                <i class="fas fa-polygon"></i> Polygon Blockchain
+                            </div>
+                        </div>
+                        <h3>NET PRESENT VALUE (NPV)</h3>
+                        <p><strong><span class="lang-text" data-key="symbol">Символ:</span></strong> NPV</p>
                         <p><strong><span class="lang-text" data-key="total_supply">Общее предложение:</span></strong> 777,777,777</p>
                         
                         <div class="address-box">
@@ -677,8 +735,13 @@
                     
                     <!-- Ethereum Token -->
                     <div class="token-card">
-                        <span class="chain-badge eth-badge">Ethereum Blockchain</span>
-                        <h3><i class="fab fa-ethereum"></i> <span class="lang-text" data-key="eth_token">NPV на Ethereum</span></h3>
+                        <div class="chain-info">
+                            <div class="chain-badge eth-badge">
+                                <i class="fab fa-ethereum"></i> Ethereum Blockchain
+                            </div>
+                        </div>
+                        <h3>Next Pro Vista (NPV)</h3>
+                        <p><strong><span class="lang-text" data-key="symbol">Символ:</span></strong> NPV</p>
                         <p><strong><span class="lang-text" data-key="total_supply">Общее предложение:</span></strong> 381,654,729</p>
                         
                         <div class="address-box">
@@ -745,62 +808,68 @@
                 <p><span class="lang-text" data-key="social_subtitle">Присоединяйтесь к нашему сообществу в социальных сетях:</span></p>
                 
                 <div class="social-grid">
-                    <div class="social-card">
+                    <a href="https://vk.link/netpresentvalue" class="social-card" target="_blank">
                         <div class="social-icon">
                             <i class="fas fa-link"></i>
                         </div>
-                        <a href="https://vk.link/netpresentvalue" target="_blank"><span class="lang-text" data-key="website">Официальный сайт</span></a>
-                    </div>
+                        <span>Официальный сайт</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://vk.com/netpresentvalue" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #0077b5, #00a0dc);">
                             <i class="fab fa-vk"></i>
                         </div>
-                        <a href="https://vk.com/netpresentvalue" target="_blank">VKontakte</a>
-                    </div>
+                        <span>VKontakte</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://www.facebook.com/groups/netpresentvalue/" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #3b5998, #8b9dc3);">
                             <i class="fab fa-facebook"></i>
                         </div>
-                        <a href="https://www.facebook.com/groups/netpresentvalue/" target="_blank">Facebook</a>
-                    </div>
+                        <span>Facebook</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://github.com/rucryptowhale" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #333, #6e5494);">
                             <i class="fab fa-github"></i>
                         </div>
-                        <a href="https://github.com/rucryptowhale" target="_blank">GitHub</a>
-                    </div>
+                        <span>GitHub</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://t.me/Netpresentvalue" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #0088cc, #34b7f1);">
                             <i class="fab fa-telegram"></i>
                         </div>
-                        <a href="https://t.me/Netpresentvalue" target="_blank">Telegram Channel</a>
-                        <a href="https://t.me/npvproject" target="_blank"><span class="lang-text" data-key="private_chat">Приватный чат</span></a>
-                    </div>
+                        <span>Telegram Channel</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://t.me/npvproject" class="social-card" target="_blank">
+                        <div class="social-icon" style="background:linear-gradient(135deg, #0088cc, #34b7f1); border: 2px solid #34b7f1;">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <span>Приватный чат</span>
+                    </a>
+                    
+                    <a href="https://x.com/NPVproject" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #000, #657786);">
                             <i class="fab fa-x-twitter"></i>
                         </div>
-                        <a href="https://x.com/NPVproject" target="_blank">Twitter / X</a>
-                    </div>
+                        <span>Twitter / X</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://www.instagram.com/npvproject" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #e1306c, #833ab4);">
                             <i class="fab fa-instagram"></i>
                         </div>
-                        <a href="https://www.instagram.com/npvproject" target="_blank">Instagram</a>
-                    </div>
+                        <span>Instagram</span>
+                    </a>
                     
-                    <div class="social-card">
+                    <a href="https://discord.gg/WcuumfuUen" class="social-card" target="_blank">
                         <div class="social-icon" style="background:linear-gradient(135deg, #5865F2, #7289da);">
                             <i class="fab fa-discord"></i>
                         </div>
-                        <a href="https://discord.gg/WcuumfuUen" target="_blank">Discord</a>
-                    </div>
+                        <span>Discord</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -812,7 +881,7 @@
         
         <footer>
             <p>© 2024 Net Present Value Community. <span class="lang-text" data-key="rights">Все права защищены.</span></p>
-            <p><span class="lang-text" data-key="founded">Основано в 2024 году</span> | Founder KPUR</p>
+            <p><span class="lang-text" data-key="founded">Основано в 2024 году</span> | KPUR</p>
         </footer>
     </div>
 
@@ -826,18 +895,21 @@
                 social: "Социальные сети",
                 about_title: "О сообществе Net Present Value",
                 about_text1: "Net Present Value (NPV) объединяет инвесторов и трейдеров, работающих с разными активами. Название проекта отражает его суть:",
+                financial_concept: "Финансовый концепт",
                 about_text2: "(Чистая приведённая стоимость)",
                 about_text3: "ключевой финансовый показатель, демонстрирующий реальную ценность инвестиций.",
-                about_text4: "Альтернативная трактовка:",
+                alternative: "Альтернативная трактовка",
                 about_text5: "(Сеть)",
                 about_text6: "(Подарок)",
                 about_text7: "(Ценность)",
-                about_text8: "Наша цель — создание инвестиционного синдиката, который предоставляет:",
+                our_goals: "Наши цели",
+                about_text8: "Создание инвестиционного синдиката, который предоставляет:",
                 about_text9: "Качественную аналитику рынков",
                 about_text10: "Образовательные материалы",
                 about_text11: "Инновационные финансовые продукты",
-                about_text12: "Основатель сообщества (Founder KPUR) — опытный инвестор из России, развивающий сообщество с 2024 года.",
-                values_title: "Наши ценности:",
+                founder: "Основатель",
+                about_text12: "Сообщество основано опытным инвестором KPUR из России, который развивает проект с 2024 года.",
+                values_title: "Наши ценности",
                 value1: "Последовательный рост капитала при минимальных рисках",
                 value2: "Изучение рынков, экономики и поведенческих моделей",
                 value3: "Поддержка начинающих инвесторов и защита от потерь",
@@ -846,6 +918,7 @@
                 value6: "Мы НЕ даём индивидуальных инвестиционных рекомендаций",
                 roadmap_btn: "Дорожная карта проекта",
                 tokens_title: "Токены Net Present Value",
+                token_info: "Эти токены вознаграждают за активное участие в сообществе, изучающем инвестиции и блокчейн. Ограниченный выпуск. Функции развиваются в зависимости от потребностей участников. Токен технически доступен для торговли, но не имеет фиксированной стоимости и не предоставляет никаких гарантий. Работа с токеном сопряжена с рисками.",
                 ton_token: "NPV на TON",
                 poly_token: "NPV на Polygon",
                 eth_token: "NPV на Ethereum",
@@ -878,18 +951,21 @@
                 social: "Social Media",
                 about_title: "About Net Present Value Community",
                 about_text1: "Net Present Value (NPV) unites investors and traders working with various assets. The project name reflects its essence:",
+                financial_concept: "Financial Concept",
                 about_text2: "(Net Present Value)",
                 about_text3: "a key financial indicator demonstrating the real value of investments.",
-                about_text4: "Alternative interpretation:",
+                alternative: "Alternative Interpretation",
                 about_text5: "(Network)",
                 about_text6: "(Gift)",
                 about_text7: "(Value)",
-                about_text8: "Our goal is to create an investment syndicate providing:",
+                our_goals: "Our Goals",
+                about_text8: "Creating an investment syndicate providing:",
                 about_text9: "High-quality market analytics",
                 about_text10: "Educational materials",
                 about_text11: "Innovative financial products",
-                about_text12: "Community founder (Founder KPUR) is an experienced investor from Russia developing the community since 2024.",
-                values_title: "Our Values:",
+                founder: "Founder",
+                about_text12: "The community was founded by experienced investor KPUR from Russia, developing the project since 2024.",
+                values_title: "Our Values",
                 value1: "Consistent capital growth with minimal risks",
                 value2: "Study of markets, economics, and behavioral models",
                 value3: "Support for novice investors and protection against losses",
@@ -898,6 +974,7 @@
                 value6: "We do NOT provide individual investment recommendations",
                 roadmap_btn: "Project Roadmap",
                 tokens_title: "Net Present Value Tokens",
+                token_info: "These tokens reward active participation in a community studying investments and blockchain. Limited issue. Features evolve based on participants' needs. The token is technically available for trading but has no fixed value and provides no guarantees. Working with tokens involves risks.",
                 ton_token: "NPV on TON",
                 poly_token: "NPV on Polygon",
                 eth_token: "NPV on Ethereum",
