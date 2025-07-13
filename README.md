@@ -3,9 +3,6 @@
 Официальный репозиторий сообщества для инвесторов и трейдеров NET PRESENT VALUE (NPVproject)
 
 [![Website](https://img.shields.io/badge/🌐-Официальный_сайт-0088CC?style=for-the-badge&logo=github)](https://rucryptowhale.github.io/Netpresentvalue/)
-[![Stars](https://img.shields.io/github/stars/rucryptowhale/Netpresentvalue?style=social)](https://github.com/rucryptowhale/Netpresentvalue/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/rucryptowhale/Netpresentvalue?color=blue&logo=github)](https://github.com/rucryptowhale/Netpresentvalue/commits/main)
-[![Repo Size](https://img.shields.io/github/repo-size/rucryptowhale/Netpresentvalue?logo=github)](https://github.com/rucryptowhale/Netpresentvalue)
 
 ## 📌 О проекте
 
